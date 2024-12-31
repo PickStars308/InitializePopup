@@ -5,12 +5,18 @@
 
     <string name="dialog_message">
         本应用需要您阅读并同意以下内容：\n\n
-        1. 用户协议：您同意遵守本应用的所有条款与条件，使用本应用时，您应尊重并遵循相关法律法规。\n\n
-        2. 隐私政策：我们承诺保护您的隐私，收集的个人信息仅用于应用功能的提供，不会未经您的同意向第三方泄露。\n\n
+        1. 《用户协议》：您同意遵守本应用的所有条款与条件，使用本应用时，您应尊重并遵循相关法律法规。\n\n
+        2. 《隐私政策》：我们承诺保护您的隐私，收集的个人信息仅用于应用功能的提供，不会未经您的同意向第三方泄露。\n\n
         请您仔细阅读以上条款，并在使用本应用前同意相关协议与政策。
     </string>
 
     <string name="dialog_accept">我同意</string>
 
     <string name="dialog_decline">我不同意</string>
+
+    <string name="UserAgreement">《用户协议》</string>
+
+    <string name="PrivacyPolicy">《隐私政策》</string>
+
+    <string name="CheckBoxText">我同意《用户协议》和《隐私政策》</string>
 </resources>
