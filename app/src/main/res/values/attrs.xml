@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="RadiusCardView">
+        <attr name="rcv_cornerRadius" format="dimension" />
+        <attr name="rcv_topLeftRadius" format="dimension" />
+        <attr name="rcv_topRightRadius" format="dimension" />
+        <attr name="rcv_bottomRightRadius" format="dimension" />
+        <attr name="rcv_bottomLeftRadius" format="dimension" />
+        <attr name="rcv_cardBackgroundColor" format="color" />
+        <attr name="rcv_strokeWidth" format="dimension" />
+        <attr name="rcv_strokeColor" format="color" />
+    </declare-styleable>
+
+</resources>
