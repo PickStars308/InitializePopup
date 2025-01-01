@@ -10,13 +10,13 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.graphics.drawable.ColorDrawable;
+import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
 
-import com.google.android.material.card.MaterialCardView;
 import com.pickstars.initializepopup.R;
 
 
-public class RadiusCardView extends MaterialCardView {
+public class RadiusCardView extends CardView {
     private float crRadiu;  // 均匀的圆角半径
     private float tlRadiu; // 左上角半径
     private float trRadiu; // 右上角半径
@@ -31,7 +31,7 @@ public class RadiusCardView extends MaterialCardView {
     }
 
     public RadiusCardView(Context context, AttributeSet attrs) {
-        this(context, attrs, com.google.android.material.R.attr.materialCardViewStyle);
+        this(context, attrs, 0);
     }
 
     public RadiusCardView(Context context, AttributeSet attrs, int defStyleAttr) {
