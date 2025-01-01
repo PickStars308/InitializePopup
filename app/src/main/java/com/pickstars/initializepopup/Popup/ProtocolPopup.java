@@ -1,19 +1,18 @@
 package com.pickstars.initializepopup.Popup;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
-import android.view.Gravity;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lxj.xpopup.animator.PopupAnimator;
+import com.lxj.xpopup.core.BottomPopupView;
 import com.pickstars.initializepopup.R;
 import com.pickstars.initializepopup.SharedPreferencesHelper;
 import com.pickstars.initializepopup.Utils.ClickableTextHelper;
@@ -22,37 +21,24 @@ import com.pickstars.initializepopup.WelcomeActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProtocolPopup extends Dialog {
+public class ProtocolPopup extends BottomPopupView {
 
     private final Activity activity;
-    public ProtocolPopup(@NonNull Context context) {
+
+    public ProtocolPopup(@NonNull Context context, Activity activity) {
         super(context);
-        init();
-        activity = (Activity) context;
+        this.activity = activity;
     }
-
-    private void init() {
-        // 设置布局
-        setContentView(R.layout.protocol_popup);
-
-        // 配置窗口参数
-        Window window = getWindow();
-        if (window != null) {
-            WindowManager.LayoutParams params = window.getAttributes();
-            params.gravity = Gravity.BOTTOM; // 设置为底部显示
-            params.width = WindowManager.LayoutParams.MATCH_PARENT; // 宽度全屏
-            params.height = WindowManager.LayoutParams.WRAP_CONTENT; // 高度自适应
-            window.setAttributes(params);
-
-            // 移除默认背景边距
-            window.setBackgroundDrawableResource(android.R.color.transparent);
-            window.setWindowAnimations(R.style.BottomDialogAnimation); // 设置动画样式
-        }
-
-        // 设置背景透明
-        setCancelable(true); // 点击外部可关闭
-        setCanceledOnTouchOutside(true);
-
+    // 返回自定义弹窗的布局
+    @Override
+    protected int getImplLayoutId() {
+        return R.layout.protocol_popup;
+    }
+    // 执行初始化操作，比如：findView，设置点击，或者任何你弹窗内的业务逻辑
+    @SuppressLint("InlinedApi")
+    @Override
+    protected void onCreate() {
+        super.onCreate();
         CheckBox CheckBox = findViewById(R.id.CheckBox);
 
         LinearLayout ReadTheAgreementLayout = findViewById(R.id.ReadTheAgreementLayout);
@@ -95,6 +81,21 @@ public class ProtocolPopup extends Dialog {
             dismiss();
             activity.finish();
         });
-
     }
+    // 设置最大宽度，看需要而定，
+    @Override
+    protected int getMaxWidth() {
+        return super.getMaxWidth();
+    }
+    // 设置最大高度，看需要而定
+    @Override
+    protected int getMaxHeight() {
+        return super.getMaxHeight();
+    }
+    // 设置自定义动画器，看需要而定
+    @Override
+    protected PopupAnimator getPopupAnimator() {
+        return super.getPopupAnimator();
+    }
+
 }
